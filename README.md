@@ -21,7 +21,7 @@ IDA Pro Debugger Arguments (version 7.6)
 
 **Caution**
 
-- You have to run the binary by netcat or pwntools before attaching process, or you can't see the process in your ID
+- You have to run the binary by netcat or pwntools before attaching process, or you can't see the process in your IDA
 - You have to run the docker in a 64bit arch linux to support both 32bit(i386) and 64bit(amd64) debug
 
 ### Success Demo
