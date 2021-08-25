@@ -1,13 +1,5 @@
 version: '3.1'
 
-# You can modify - in this directory
-# debug (directory) place your binary going to be debug and attachments in it
-# 
-# DON'T modify - files directory
-# init.sh - the scirpt used to init the environment
-# debs -  apt pacakages for socat
-# linux_server -  Ida Debug Server elf32 v7.6
-# linux_server64 - Ida Debug Server elf64 
 services:
     server:
         # more images: https://hub.docker.com/_/ubuntu
