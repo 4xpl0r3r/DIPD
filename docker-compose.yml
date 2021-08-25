@@ -1,0 +1,28 @@
+version: '3.1'
+
+# You can modify - in this directory
+# debug (directory) place your binary going to be debug and attachments in it
+# 
+# DON'T modify - files directory
+# init.sh - the scirpt used to init the environment
+# debs -  apt pacakages for socat
+# linux_server -  Ida Debug Server elf32 v7.6
+# linux_server64 - Ida Debug Server elf64 
+services:
+    server:
+        # more images: https://hub.docker.com/_/ubuntu
+        # image: ubuntu:16.04 # 64bit arch (amd64)
+        # image: i386/ubuntu:16.04 # 32bit arch
+        # image: ubuntu:18.04 # 64bit arch (amd64)
+        # image: i386/ubuntu:18.04 # 32bit arch
+        image: ubuntu:16.04
+        ports: 
+            - 23458:23458 # This port will connect to the STDIO of debuging binary
+            - 23946:23946 # This port will connect to the IDA Debug Server
+        command: "bash /tmp/init_files/init.sh"
+        environment: 
+            flag_pos: '' # the position where the impersonated flag will be stored, leave blank to block it
+            debug_name: 'todebug' # the name of binary you want to debug in ./debug/ directory
+        volumes:
+            - ./files:/tmp/init_files:ro
+            - ./debug:/tmp/debug:ro
