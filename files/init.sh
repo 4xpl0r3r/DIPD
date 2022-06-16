@@ -3,7 +3,7 @@ cp -r /tmp/init_files/* ~
 mkdir ~/debug
 cp -r /tmp/debug/* ~/debug/
 cd ~
-chmod +x ~/*
+chmod +x ~/debug/*
 
 apt install ./debs/`dpkg --print-architecture`/*.deb
 
